@@ -37,6 +37,14 @@
                 </div>
 
                 <div class="form-group">
+                  <label for="noTelp">Nomor Telepon</label>
+                  <input type="text" class="form-control @error('noTelp') is-invalid @enderror" name="noTelp" id="noTelp" placeholder="noTelp" autocomplete="off" value="{{ old('noTelp') ?? $user->noTelp }}">
+                  @error('noTelp')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
+                </div>                
+
+                <div class="form-group">
                   <label for="password">Password</label>
                   <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="password" placeholder="Password" autocomplete="off">
                   @error('password')

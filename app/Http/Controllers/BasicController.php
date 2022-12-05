@@ -49,6 +49,7 @@ class BasicController extends Controller
             'name' => $request->name,
             'last_name' => $request->last_name,
             'email' => $request->email,
+            'noTelp' => $request->noTelp,
             'password' => Hash::make($request->password)
         ]);
 

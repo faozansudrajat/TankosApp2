@@ -32,27 +32,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card-profile-stats">
-                                <span class="heading">22</span>
-                                <span class="description">Friends</span>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card-profile-stats">
-                                <span class="heading">10</span>
-                                <span class="description">Photos</span>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card-profile-stats">
-                                <span class="heading">89</span>
-                                <span class="description">Comments</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -99,6 +78,15 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="noTelp">Nomor Telepon<span class="small text-danger">*</span></label>
+                                        <input type="text" id="noTelp" class="form-control" name="noTelp" placeholder="+62" value="{{ old('noTelp', Auth::user()->noTelp) }}">
+                                    </div>
+                                </div>
+                            </div>                            
 
                             <div class="row">
                                 <div class="col-lg-4">

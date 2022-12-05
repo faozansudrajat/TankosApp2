@@ -40,6 +40,10 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <input type="text" class="form-control form-control-user" name="noTelp" placeholder="{{ __('Phone Number') }}" value="{{ old('noTelp') }}" required>
+                                    </div>
+
+                                    <div class="form-group">
                                         <input type="password" class="form-control form-control-user" name="password" placeholder="{{ __('Password') }}" required>
                                     </div>
 

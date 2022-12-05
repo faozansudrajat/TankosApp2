@@ -26,9 +26,14 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/blank', function () {
-    return view('blank');
-})->name('blank');
+Route::get('/order', function () {
+    return view('order');
+})->name('order');
+
+Route::get('/transaction', function () {
+    return view('transaction');
+})->name('transaction');
+
 
 Route::middleware('auth')->group(function() {
     Route::resource('basic', BasicController::class);
