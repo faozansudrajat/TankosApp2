@@ -54,7 +54,6 @@
                             <ul>
                                 <li><a href="https://laravel.com" target="_blank">Laravel</a> - Open source framework.</li>
                                 <li><a href="https://github.com/DevMarketer/LaravelEasyNav" target="_blank">LaravelEasyNav</a> - Making managing navigation in Laravel easy.</li>
-                                <li><a href="https://startbootstrap.com/themes/sb-admin-2" target="_blank">SB Admin 2</a> - Thanks to Start Bootstrap.</li>
                             </ul>
                         </div>
                     </div>
