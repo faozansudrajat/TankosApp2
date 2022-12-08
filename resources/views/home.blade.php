@@ -1,23 +1,35 @@
 @extends('layouts.admin')
 
 @section('main-content')
-
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">{{ __('Dashboard') }}</h1>
+    <h1 class="h3 mb-4 text-gray-800">{{ __('Home') }}</h1>
 
-    @if (session('success'))
-    <div class="alert alert-success border-left-success alert-dismissible fade show" role="alert">
-        {{ session('success') }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
+    <div class="row justify-content-center">
+
+            <div class="card shadow mb-4">               
+                <div class="card-produk-image m-3 mb-10">
+                    <img src="img/produk1img.png" height="250" width="250" >
+                </div>
+                <div class="title m-b-md">
+                    Tandan Kosong
+                </div>               
+            </div>
+            <div class="card shadow mb-4">               
+                <div class="card-produk-image m-3 mb-10">
+                    <img src="img/produk2img.png" height="250" width="250" >
+                </div>
+                <div class="title m-b-md">
+                    Limbah Sawit
+                </div>                   
+            </div>
+            <div class="card shadow mb-4">               
+                <div class="card-produk-image m-3 mb-10">
+                    <img src="img/produk3img.png" height="250" width="250" >
+                </div>
+                <div class="title m-b-md">
+                    Abu Sawit
+                </div>                   
+            </div>
     </div>
-    @endif
-
-    @if (session('status'))
-        <div class="alert alert-success border-left-success" role="alert">
-            {{ session('status') }}
-        </div>
-    @endif
 
 @endsection
