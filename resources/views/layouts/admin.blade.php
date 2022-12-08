@@ -52,14 +52,14 @@
         <!-- Nav Item - Order -->
         <li class="nav-item {{ Nav::isRoute('order') }}">
             <a class="nav-link" href="{{ route('order') }}">
-                <img src="img/orderimg.png" width=20 height=20>
+                <i class="fas fa-fw fa-shopping-cart"></i>
                 <span>{{ __('Order') }}</span></a>
         </li>
 
         <!-- Nav Item - Transaction -->
         <li class="nav-item {{ Nav::isRoute('transaction') }}">
             <a class="nav-link" href="{{ route('transaction') }}">
-                <img src="img/transactionimg.png" width=20 height=20>
+                <i class="fas fa-fw fa-book"></i>
                 <span>{{ __('Transaction') }}</span></a>
         </li>        
 
