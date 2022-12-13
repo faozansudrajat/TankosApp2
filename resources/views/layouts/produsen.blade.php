@@ -61,7 +61,14 @@
             <a class="nav-link" href="{{ route('transactionProdusen') }}">
                 <i class="fas fa-fw fa-book"></i>
                 <span>{{ __('Transaction') }}</span></a>
-        </li>               
+        </li>
+        
+        <!-- Nav Item - Assets -->
+        <li class="nav-item {{ Nav::isRoute('assets') }}">
+            <a class="nav-link" href="{{ route('assets') }}">
+                <i class="fas fa-fw fa-book"></i>
+                <span>{{ __('Assets') }}</span></a>
+        </li>   
 
         <!-- Nav Item - Profile -->
         <li class="nav-item {{ Nav::isRoute('profile') }}">
@@ -71,9 +78,9 @@
             </a>
         </li>
 
-        <!-- Nav Item - About -->
-        <li class="nav-item {{ Nav::isRoute('about') }}">
-            <a class="nav-link" href="{{ route('about') }}">
+        <!-- Nav Item - About  Produsen-->
+        <li class="nav-item {{ Nav::isRoute('aboutprodusen') }}">
+            <a class="nav-link" href="{{ route('aboutprodusen') }}">
                 <i class="fas fa-fw fa-hands-helping"></i>
                 <span>{{ __('About') }}</span>
             </a>

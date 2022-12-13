@@ -7,7 +7,7 @@
     <div class="row justify-content-center">
 
         <div class="col-lg-8">
-            <h1>Ini Halaman Incoming Order</h1>
+            <h1>Ini Halaman Assets</h1>
 
         </div>
 
