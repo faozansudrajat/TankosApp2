@@ -34,9 +34,17 @@ Route::get('/order', function () {
     return view('order');
 })->name('order');
 
+Route::get('/incomingorder', function () {
+    return view('incomingorder');
+})->name('incomingorder');
+
 Route::get('/transaction', function () {
     return view('transaction');
 })->name('transaction');
+
+Route::get('/transactionProdusen', function () {
+    return view('transactionProdusen');
+})->name('transactionProdusen');
 
 
 Route::middleware('auth')->group(function() {
