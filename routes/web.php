@@ -26,7 +26,7 @@ use App\Http\Controllers\TransaksiController;
 Route::get('/profile', 'ProfileController@index')->name('profile');
 Route::put('/profile', 'ProfileController@update')->name('profile.update');
 
-Route::get('/profileprodusen', 'ProfileProdusenController@index')->name('profile');
+Route::get('/profileprodusen', 'ProfileProdusenController@index')->name('profileprodusen');
 Route::put('/profileprodusen', 'ProfileProdusenController@update')->name('profile.update');
 
 

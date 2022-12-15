@@ -71,8 +71,8 @@
         </li>   
 
         <!-- Nav Item - Profile -->
-        <li class="nav-item {{ Nav::isRoute('profile') }}">
-            <a class="nav-link" href="{{ route('profile') }}">
+        <li class="nav-item {{ Nav::isRoute('profileprodusen') }}">
+            <a class="nav-link" href="{{ route('profileprodusen') }}">
                 <i class="fas fa-fw fa-user"></i>
                 <span>{{ __('Profile') }}</span>
             </a>
