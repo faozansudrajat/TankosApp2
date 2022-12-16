@@ -45,35 +45,35 @@
         <!-- Nav Item - Dashboard -->
         <li class="nav-item {{ Nav::isRoute('home') }}">
             <a class="nav-link" href="{{ route('home') }}">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i><img src="img/dashboard.png" alt="" width="18"></i>
                 <span>{{ __('Dashboard') }}</span></a>
         </li>
 
         <!-- Nav Item - Incoming Order -->
         <li class="nav-item {{ Nav::isRoute('incomingorder') }}">
             <a class="nav-link" href="{{ route('incomingorder') }}">
-                <i class="fas fa-fw fa-shopping-cart"></i>
+                <i><img src="img/incoming_order.png" alt="" width="18"></i>
                 <span>{{ __('Incoming Order') }}</span></a>
         </li>
 
          <!-- Nav Item - Transaction Produsen -->
         <li class="nav-item {{ Nav::isRoute('transactionProdusen') }}">
             <a class="nav-link" href="{{ route('transactionProdusen') }}">
-                <i class="fas fa-fw fa-book"></i>
+                <i><img src="img/transaction.png" alt="" width="18"></i>
                 <span>{{ __('Transaction') }}</span></a>
         </li>
         
         <!-- Nav Item - Assets -->
         <li class="nav-item {{ Nav::isRoute('assets') }}">
             <a class="nav-link" href="{{ route('assets') }}">
-                <i class="fas fa-fw fa-book"></i>
+                <i><img src="img/asset.png" alt="" width="18"></i>
                 <span>{{ __('Assets') }}</span></a>
         </li>   
 
         <!-- Nav Item - Profile -->
         <li class="nav-item {{ Nav::isRoute('profileprodusen') }}">
             <a class="nav-link" href="{{ route('profileprodusen') }}">
-                <i class="fas fa-fw fa-user"></i>
+                <i><img src="img/profile.png" alt="" width="18"></i>
                 <span>{{ __('Profile') }}</span>
             </a>
         </li>
@@ -81,7 +81,7 @@
         <!-- Nav Item - About  Produsen-->
         <li class="nav-item {{ Nav::isRoute('aboutprodusen') }}">
             <a class="nav-link" href="{{ route('aboutprodusen') }}">
-                <i class="fas fa-fw fa-hands-helping"></i>
+                <i ><img src="img/about.png" alt="" width="18"></i>
                 <span>{{ __('About') }}</span>
             </a>
         </li>

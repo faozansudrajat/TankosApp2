@@ -45,28 +45,28 @@
         <!-- Nav Item - Dashboard -->
         <li class="nav-item {{ Nav::isRoute('home') }}">
             <a class="nav-link" href="{{ route('home') }}">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i><img src="img/dashboard.png" alt="" width="18"></i>
                 <span>{{ __('Dashboard') }}</span></a>
         </li>
 
         <!-- Nav Item - Order -->
         <li class="nav-item {{ Nav::isRoute('order') }}">
             <a class="nav-link" href="{{ route('order') }}">
-                <i class="fas fa-fw fa-shopping-cart"></i>
+                <i><img src="img/order.png" alt="" width="18"></i>
                 <span>{{ __('Order') }}</span></a>
         </li>
 
         <!-- Nav Item - Transaction -->
         <li class="nav-item {{ Nav::isRoute('transaction') }}">
             <a class="nav-link" href="{{ route('transaction') }}">
-                <i class="fas fa-fw fa-book"></i>
+                <i><img src="img/transaction.png" alt="" width="18"></i>
                 <span>{{ __('Transaction') }}</span></a>
         </li>        
 
         <!-- Nav Item - Profile -->
         <li class="nav-item {{ Nav::isRoute('profile') }}">
             <a class="nav-link" href="{{ route('profile') }}">
-                <i class="fas fa-fw fa-user"></i>
+                <i><img src="img/profile.png" alt="" width="18"></i>
                 <span>{{ __('Profile') }}</span>
             </a>
         </li>
@@ -74,7 +74,7 @@
         <!-- Nav Item - About -->
         <li class="nav-item {{ Nav::isRoute('about') }}">
             <a class="nav-link" href="{{ route('about') }}">
-                <i class="fas fa-fw fa-hands-helping"></i>
+                <i><img src="img/about.png" alt="" width="18"></i>
                 <span>{{ __('About') }}</span>
             </a>
         </li>
