@@ -1,6 +1,7 @@
-@extends('layouts.Produsen')
+@extends('layouts.konsumen')
 
 @section('main-content')
+
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800">{{ __('Profile') }}</h1>
 

@@ -1,6 +1,7 @@
-@extends('layouts.admin')
+@extends('layouts.konsumen')
 
 @section('main-content')
+
     <!-- Page Heading -->
     <style>
         #p {

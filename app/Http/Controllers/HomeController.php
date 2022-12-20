@@ -36,7 +36,7 @@ class HomeController extends Controller
         $usertype = Auth::user()->usertype;
 
         if($usertype =='0'){
-            return view('home', compact('widget'));
+            return view('konsumen.home', compact('widget'));
         }else{
             return view('produsen.home');
         }

@@ -1,6 +1,7 @@
-@extends('layouts.admin')
+@extends('layouts.produsen')
 
 @section('main-content')
+
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800">{{ __('Profile') }}</h1>
 
@@ -28,7 +29,7 @@
                         <div class="col-lg-12">
                             <div class="text-center">
                                 <h5 class="font-weight-bold">{{  Auth::user()->fullName }}</h5>
-                                <p>Konsumen</p>
+                                <p>Produsen</p>
                             </div>
                         </div>
                     </div>

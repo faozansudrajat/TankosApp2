@@ -16,7 +16,20 @@ class ProfileController extends Controller
 
     public function index()
     {
-        return view('profile');
+        $users = User::count();
+
+        $widget = [
+            'users' => $users,
+            //...
+        ];
+
+        $usertype = Auth::user()->usertype;
+
+        if($usertype =='0'){
+            return view('konsumen.profile');
+        }else{
+            return view('produsen.profile');
+        }
     }
 
     public function update(Request $request)

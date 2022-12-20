@@ -50,37 +50,37 @@
         </li>
 
         <!-- Nav Item - Incoming Order -->
-        <li class="nav-item {{ Nav::isRoute('incomingorder') }}">
-            <a class="nav-link" href="{{ route('incomingorder') }}">
+        <li class="nav-item {{ Nav::isRoute('incomingOrder') }}">
+            <a class="nav-link" href="{{ route('incomingOrder') }}">
                 <i><img src="img/incoming_order.png" alt="" width="18"></i>
                 <span>{{ __('Incoming Order') }}</span></a>
         </li>
 
          <!-- Nav Item - Transaction Produsen -->
-        <li class="nav-item {{ Nav::isRoute('transactionProdusen') }}">
-            <a class="nav-link" href="{{ route('transactionProdusen') }}">
+        <li class="nav-item {{ Nav::isRoute('transaction') }}">
+            <a class="nav-link" href="{{ route('transaction') }}">
                 <i><img src="img/transaction.png" alt="" width="18"></i>
                 <span>{{ __('Transaction') }}</span></a>
         </li>
         
-        <!-- Nav Item - Assets -->
-        <li class="nav-item {{ Nav::isRoute('assets') }}">
-            <a class="nav-link" href="{{ route('assets') }}">
+        <!-- Nav Item - Asset -->
+        <li class="nav-item {{ Nav::isRoute('asset') }}">
+            <a class="nav-link" href="{{ route('asset') }}">
                 <i><img src="img/asset.png" alt="" width="18"></i>
-                <span>{{ __('Assets') }}</span></a>
+                <span>{{ __('Asset') }}</span></a>
         </li>   
 
         <!-- Nav Item - Profile -->
-        <li class="nav-item {{ Nav::isRoute('profileprodusen') }}">
-            <a class="nav-link" href="{{ route('profileprodusen') }}">
+        <li class="nav-item {{ Nav::isRoute('profile') }}">
+            <a class="nav-link" href="{{ route('profile') }}">
                 <i><img src="img/profile.png" alt="" width="18"></i>
                 <span>{{ __('Profile') }}</span>
             </a>
         </li>
 
         <!-- Nav Item - About  Produsen-->
-        <li class="nav-item {{ Nav::isRoute('aboutprodusen') }}">
-            <a class="nav-link" href="{{ route('aboutprodusen') }}">
+        <li class="nav-item {{ Nav::isRoute('about') }}">
+            <a class="nav-link" href="{{ route('about') }}">
                 <i ><img src="img/about.png" alt="" width="18"></i>
                 <span>{{ __('About') }}</span>
             </a>

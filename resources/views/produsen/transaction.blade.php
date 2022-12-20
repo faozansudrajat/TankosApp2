@@ -1,7 +1,9 @@
-@extends('layouts.admin')
+@extends('layouts.produsen')
+
 @section('main-content')
+
 <div class="container-fluid">
-    <h1 class="h3 mb-4 text-gray-800 font-weight-bold">{{ __('Transaction') }}</h1>
+    <h1 class="h3 mb-4 text-gray-800">{{ __('Transaction') }}</h1>
     <div class="justify-content-center">
         <div class="col">
             <div class="card shadow mb-4">
@@ -18,6 +20,7 @@
                 <tr>
                   <th class="text-muted ">ID</th>
                   <th class="text-muted ">Jenis Barang</th>
+                  <th class="text-muted ">Nama Pembeli</th>
                   <th class="text-muted ">NO HP</th>
                   <th class="text-muted ">Qty</th>
                   <th class="text-muted ">Total Harga</th>
@@ -34,6 +37,9 @@
                   </td>
                   <td>
                     Tandan Kosong
+                  </td>
+                  <td>
+                    Faozan Sudrajat                 
                   </td>
                   <td>
                     081234567899
@@ -65,6 +71,9 @@
                     Limbah Sawit
                   </td>
                   <td>
+                    Athian Gifari               
+                  </td>
+                  <td>
                     081234567899
                   </td>
                   <td>
@@ -94,6 +103,9 @@
                     Abu Sawit
                   </td>
                   <td>
+                    Fadil Faitul              
+                  </td>
+                  <td>
                     081234567899
                   </td>
                   <td>
@@ -121,6 +133,9 @@
                   </td>
                   <td>
                     Tandan Kosong
+                  </td>
+                  <td>
+                    Herman Gemilang                
                   </td>
                   <td>
                     081234567899
