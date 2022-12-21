@@ -3,7 +3,7 @@
 @section('main-content')
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">{{ __('Profile') }}</h1>
+    <h1 class="h3 mb-4 text-gray-800 font-weight-bold">{{ __('Profile') }}</h1>
 
     @if ($errors->any())
         <div class="alert alert-danger border-left-danger" role="alert">

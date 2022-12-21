@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AssetController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +44,8 @@ Route::get('/order', 'OrderController@index')->name('order');
 // Incoming Order
 Route::get('/incomingOrder', 'IncomingOrderController@index')->name('incomingOrder');
 // Asset
-Route::get('/asset', 'AssetController@index')->name('asset');
+// Route::get('asset', 'AssetController@index')->name('asset');
+// Route::post('createasset', 'AssetController@create')->name('assetcreate');\
 
 
 
@@ -51,4 +53,5 @@ Route::get('/asset', 'AssetController@index')->name('asset');
 // ----- [ADDITIONAL] -----
 Route::middleware('auth')->group(function() {
     Route::resource('basic', BasicController::class);
+    Route::resource('asset', AssetController::class);
 });

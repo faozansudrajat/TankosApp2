@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Assets;
 use Illuminate\Http\Request;
 
 class AssetController extends Controller
@@ -13,7 +14,8 @@ class AssetController extends Controller
      */
     public function index()
     {
-        return view('produsen.asset');
+        $product = Assets::all();
+        return view('produsen.assets.asset', ['product' => $product]);
     }
 
     /**
@@ -23,7 +25,7 @@ class AssetController extends Controller
      */
     public function create()
     {
-        //
+        return view('produsen.assets.create');
     }
 
     /**
@@ -34,7 +36,12 @@ class AssetController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pr = new Assets();
+        $pr -> nama_barang = $request->input('nama_barang');
+        $pr -> harga = $request->input('harga');
+        $pr -> stock = $request->input('stock');
+        $pr->save();
+        return redirect()->route('asset.index');
     }
 
     /**
@@ -57,6 +64,8 @@ class AssetController extends Controller
     public function edit($id)
     {
         //
+        $pr = Assets::find($id);
+        return view('produsen.assets.edit', compact('pr'));
     }
 
     /**
@@ -69,6 +78,11 @@ class AssetController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $pr = Assets::find($id);
+        $pr->harga = $request->input('harga');
+        $pr->stock = $request->input('stock');
+        $pr->save();
+        return redirect()->route('asset.index')->with('success', 'Data berhasil diubah');
     }
 
     /**
@@ -80,5 +94,8 @@ class AssetController extends Controller
     public function destroy($id)
     {
         //
+        $pr = Assets::find($id);
+        $pr->delete();
+        return redirect()->route('asset.index');
     }
 }

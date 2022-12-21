@@ -3,7 +3,7 @@
 @section('main-content')
 
 <div class="container-fluid">
-    <h1 class="h3 mb-4 text-gray-800">{{ __('Transaction') }}</h1>
+    <h1 class="h3 mb-4 text-gray-800 font-weight-bold">{{ __('Transaction') }}</h1>
     <div class="justify-content-center">
         <div class="col">
             <div class="card shadow mb-4">

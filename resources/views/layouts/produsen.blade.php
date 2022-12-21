@@ -65,7 +65,7 @@
         
         <!-- Nav Item - Asset -->
         <li class="nav-item {{ Nav::isRoute('asset') }}">
-            <a class="nav-link" href="{{ route('asset') }}">
+            <a class="nav-link" href="{{ route('asset.index') }}">
                 <i><img src="img/asset.png" alt="" width="18"></i>
                 <span>{{ __('Asset') }}</span></a>
         </li>   
