@@ -82,7 +82,7 @@ class AssetController extends Controller
         $pr->harga = $request->input('harga');
         $pr->stock = $request->input('stock');
         $pr->save();
-        return redirect()->route('asset.index')->with('success', 'Data berhasil diubah');
+        return redirect()->route('asset.index');
     }
 
     /**
@@ -94,8 +94,5 @@ class AssetController extends Controller
     public function destroy($id)
     {
         //
-        $pr = Assets::find($id);
-        $pr->delete();
-        return redirect()->route('asset.index');
     }
 }

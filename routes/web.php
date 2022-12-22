@@ -35,7 +35,7 @@ Route::get('/transaction', 'TransactionController@index')->name('transaction');
 
 // ----- [KONSUMEN] -----
 // Order
-Route::get('/order', 'OrderController@index')->name('order');
+// Route::get('/order', 'OrderController@index')->name('order');
 
 
 
@@ -54,4 +54,5 @@ Route::get('/incomingOrder', 'IncomingOrderController@index')->name('incomingOrd
 Route::middleware('auth')->group(function() {
     Route::resource('basic', BasicController::class);
     Route::resource('asset', AssetController::class);
+    Route::resource('order', OrderController::class);
 });

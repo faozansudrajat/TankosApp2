@@ -51,7 +51,7 @@
 
         <!-- Nav Item - Order -->
         <li class="nav-item {{ Nav::isRoute('order') }}">
-            <a class="nav-link" href="{{ route('order') }}">
+            <a class="nav-link" href="{{ route('order.index') }}"">
                 <i><img src="img/order.png" alt="" width="18"></i>
                 <span>{{ __('Order') }}</span></a>
         </li>

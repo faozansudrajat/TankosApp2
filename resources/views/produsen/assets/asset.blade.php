@@ -42,11 +42,6 @@
                                         <td>{{ $p->stock }}</td>
                                         <td>
                                             <a href="{{ route('asset.edit', $p->id) }}" class="btn btn-success">Edit</a>
-                                            <form action="{{ route('asset.destroy', $p->id) }}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button class="btn btn-primary" >Hapus</button>
-                                            </form>
                                         </td>
                                     </tr>
                                 @empty

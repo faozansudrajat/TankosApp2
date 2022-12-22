@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Assets;
 use Illuminate\Http\Request;
+use App\Order;
 
 class OrderController extends Controller
 {
@@ -13,7 +15,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return view('konsumen.order');
+        $product = Assets::all();
+        return view('konsumen.order.order',compact('product'));
     }
 
     /**
@@ -34,7 +37,22 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //jika produk belum dipilih
+        if($request->product_id==0){
+            return redirect()->route('order.index')->with('pesan','Anda Belum Memilih Produk');
+        }
+        $price = Assets::where('id', $request->product_id)->first();
+        $order = new Order();
+        $order -> product_id = $request->input('product_id');
+        $order -> quantity = $request->input('quantity');
+        $order -> name = $request->input('nama');
+        $order -> noTelp = $request->input('phonenumber');
+        $order -> address = $request->input('address');
+        $order -> proofofpayment = $request->input('proofofpayment');
+        $order -> jumlah = $price ->harga * $request->quantity;
+        $order->save();
+        return redirect()->route('transaction.index');
+      
     }
 
     /**
