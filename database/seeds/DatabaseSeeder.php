@@ -1,6 +1,7 @@
 <?php
 
 use App\User;
+use App\Assets;
 use Database\Seeders\AdminUserSeeder;
 use Illuminate\Database\Seeder;
 
@@ -13,12 +14,26 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
-            'name' => 'Super',
-            'last_name' => 'Administrator',
-            'email' => 'admin@mail.com',
-            'email_verified_at' => now(),
-            'password' => '12345', // password
-        ]);
+        $data = [
+            [
+                'id' => 1,
+                'nama_barang' => 'Tandan Kosong',
+                'harga' => 0,
+                'stock' => 0,
+            ],
+            [
+                'id' => 2,
+                'nama_barang' => 'Limbah Sawit',
+                'harga' => 0,
+                'stock' => 0,
+            ],
+            [
+                'id' => 3,
+                'nama_barang' => 'Abu Sawit',
+                'harga' => 0,
+                'stock' => 0,
+            ],
+        ];
+        Assets::insert($data);
     }
 }

@@ -3,16 +3,12 @@
 @section('main-content')
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800 font-weight-bold">{{ __('Assets') }}</h1>
+    <h1 class="h3 mb-4 text-gray-800 font-weight-bold">{{ __('Asset') }}</h1>
 
     <div class="row justify-content-center">
         <div class="col-lg-12">
             <!-- DataTales Example -->
             <div class="card shadow mb-4">
-                <div class="card-header">
-                    <a href="{{ route('asset.create') }}" class="btn btn-success">Add Product</a>
-                    @csrf
-                </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -26,7 +22,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($product as $p)
+                                @foreach ($product as $p)
                                     <tr>
                                         <td>
                                             @if($p->nama_barang == "Tandan Kosong")
@@ -44,11 +40,7 @@
                                             <a href="{{ route('asset.edit', $p->id) }}" class="btn btn-success">Edit</a>
                                         </td>
                                     </tr>
-                                @empty
-                                    <tr>
-                                        <td colspan="5" class="text-center">Belum ada data</td>
-                                    </tr>
-                                @endforelse
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

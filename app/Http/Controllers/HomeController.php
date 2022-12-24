@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Assets;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -34,11 +35,13 @@ class HomeController extends Controller
         ];
 
         $usertype = Auth::user()->usertype;
+        
+        $product = Assets::all();
 
         if($usertype =='0'){
-            return view('konsumen.home', compact('widget'));
+            return view('konsumen.home', compact('widget'), ['product' => $product]);
         }else{
-            return view('produsen.home');
+            return view('produsen.home', ['product' => $product]);
         }
         
     }
