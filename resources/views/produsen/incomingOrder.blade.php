@@ -24,17 +24,29 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @forelse ($order as $ord)
                             <tr>
-                                <td>Tandan Kosong</td>
-                                <td>Herman Gemilang</td>
-                                <td>081234456789</td>
-                                <td>5</td>
-                                <td>Rp 350.000 </td>
-                                <td>Jl. Mawar 25</td>
+                                @if ($order->product_id == 1)
+                                    <td>Tandan Kosong</td>
+                                @elseif($order->product_id == 2)
+                                    <td>limbah Sawit</td>
+                                @elseif($order->product_id == 3)
+                                    <td>Abu Sawit</td>
+                                @endif
+                                <td>{{ $order->name}}</td>
+                                <td>{{ $order->noTelp }}</td>
+                                <td>{{ $order->quantity }}</td>
+                                <td>{{ $order->jumlah }} </td>
+                                <td>{{ $order->address }}</td>
                                 <td>
                                     <button style="border: 2px solid black" type="submit" class="btn">Selesaikan</button>
                                 </td>
                             </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="7" class="text-center">Belum ada data order</td>
+                                </tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Order;
+use App\Assets;
 use Illuminate\Http\Request;
 
 class IncomingOrderController extends Controller
@@ -13,7 +15,9 @@ class IncomingOrderController extends Controller
      */
     public function index()
     {
-        return view('produsen.incomingOrder');
+        $product = Assets::all(); 
+        $order = Order::all();
+        return view('produsen.incomingOrder',compact('order','product'));
     }
 
     /**

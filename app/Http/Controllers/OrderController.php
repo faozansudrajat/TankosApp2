@@ -51,7 +51,7 @@ class OrderController extends Controller
         $order -> proofofpayment = $request->input('proofofpayment');
         $order -> jumlah = $price ->harga * $request->quantity;
         $order->save();
-        return redirect()->route('transaction.index');
+        return redirect()->route('order.index');
       
     }
 

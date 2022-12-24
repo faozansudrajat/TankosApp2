@@ -47,7 +47,7 @@
                             <label class="font-weight-bold">Quantity</label>
                             <input type="number" name="quantity" class="form-control" placeholder="0" required="">
                         </div>
-                        
+                        <P>Stock: </P>
     
     
                         <br>

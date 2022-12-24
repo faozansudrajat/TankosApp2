@@ -42,7 +42,7 @@ Route::get('/transaction', 'TransactionController@index')->name('transaction');
 
 // ----- [PRODUSEN] -----
 // Incoming Order
-Route::get('/incomingOrder', 'IncomingOrderController@index')->name('incomingOrder');
+// Route::get('/incomingOrder', 'IncomingOrderController@index')->name('incomingOrder');
 // Asset
 // Route::get('asset', 'AssetController@index')->name('asset');
 // Route::post('createasset', 'AssetController@create')->name('assetcreate');\
@@ -55,4 +55,5 @@ Route::middleware('auth')->group(function() {
     Route::resource('basic', BasicController::class);
     Route::resource('asset', AssetController::class);
     Route::resource('order', OrderController::class);
+    Route::resource('incomingOrder', IncomingOrderController::class);
 });
