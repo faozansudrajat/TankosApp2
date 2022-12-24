@@ -37,11 +37,19 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+        
         //jika produk belum dipilih
-        if($request->product_id==0){
+        if(($request->product_id==0)&&($request->quantitty==0)){
             return redirect()->route('order.index')->with('pesan','Anda Belum Memilih Produk');
         }
-        $price = Assets::where('id', $request->product_id)->first();
+        $request->validate([
+            'quantity' => 'required|numeric',
+            'nama' => 'required|string',
+            'phonenumber' => 'required|numeric',
+            'address' => 'required|string',
+            
+        ]);
+        $product = Assets::where('id', $request->product_id)->first();
         $order = new Order();
         $order -> product_id = $request->input('product_id');
         $order -> quantity = $request->input('quantity');
@@ -49,9 +57,11 @@ class OrderController extends Controller
         $order -> noTelp = $request->input('phonenumber');
         $order -> address = $request->input('address');
         $order -> proofofpayment = $request->input('proofofpayment');
-        $order -> jumlah = $price ->harga * $request->quantity;
+        $order -> jumlah = $product ->harga * $request->quantity;
+        $product ->stock -= $request->input('quantity');
         $order->save();
-        return redirect()->route('order.index');
+        $product->save();
+        return redirect()->route('order.index')->with('message', 'Proses order berhasil');
       
     }
 

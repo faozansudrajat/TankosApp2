@@ -24,6 +24,15 @@
             <strong>{{ $message }}</strong>
         </div>
     @endif
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
     <div class="row justify-content-center">
 
         <div class="col-lg-8">
@@ -39,7 +48,7 @@
                             <select name="product_id" class="form-control">
                                 <option value="0"> Pilih Produk </option>
                                 @foreach ($product as $pr)
-                                    <option value="{{ $pr->id }}">{{ $pr->nama_barang }} - Rp {{ $pr->harga }}</option>
+                                    <option value="{{ $pr->id }}">{{ $pr->nama_barang }} - Rp {{ $pr->harga }} - Stock = {{ $pr->stock}} </option>
                                 @endforeach
                             </select>
                         </div>
@@ -47,9 +56,7 @@
                             <label class="font-weight-bold">Quantity</label>
                             <input type="number" name="quantity" class="form-control" placeholder="0" required="">
                         </div>
-                        <P>Stock: </P>
-    
-    
+
                         <br>
     
                         <div class="form-group">
