@@ -28,24 +28,10 @@ Route::get('/profile', 'ProfileController@index')->name('profile');
 Route::put('/profile', 'ProfileController@update')->name('profile.update');
 // About
 Route::get('/about', 'AboutController@index')->name('about');
-// Transaction
+
 Route::get('/transaction', 'TransactionController@index')->name('transaction');
 
 
-
-// ----- [KONSUMEN] -----
-// Order
-// Route::get('/order', 'OrderController@index')->name('order');
-
-
-
-
-// ----- [PRODUSEN] -----
-// Incoming Order
-// Route::get('/incomingOrder', 'IncomingOrderController@index')->name('incomingOrder');
-// Asset
-// Route::get('asset', 'AssetController@index')->name('asset');
-// Route::post('createasset', 'AssetController@create')->name('assetcreate');\
 
 
 
@@ -56,4 +42,5 @@ Route::middleware('auth')->group(function() {
     Route::resource('asset', AssetController::class);
     Route::resource('order', OrderController::class);
     Route::resource('incomingOrder', IncomingOrderController::class);
+    Route::resource('transaction', TransactionController::class);
 });

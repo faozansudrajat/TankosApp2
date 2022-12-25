@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class TransactionController extends Controller
@@ -17,17 +18,17 @@ class TransactionController extends Controller
     {
         $users = User::count();
 
-        $widget = [
-            'users' => $users,
-            //...
-        ];
+
 
         $usertype = Auth::user()->usertype;
-
+        $orders = DB::table('orders')
+            ->join('assets', 'orders.product_id', '=', 'assets.id')
+            ->select('orders.*', 'assets.nama_barang', 'assets.stock','assets.harga')
+            ->get();
         if($usertype =='0'){
-            return view('konsumen.transaction', compact('widget'));
+            return view('konsumen.transaction', compact('orders'));
         }else{
-            return view('produsen.transaction');
+            return view('produsen.transaction', compact('orders'));
         }
     }
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Order;
 use App\Assets;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class IncomingOrderController extends Controller
 {
@@ -15,9 +16,11 @@ class IncomingOrderController extends Controller
      */
     public function index()
     {
-        $product = Assets::all(); 
-        $order = Order::all();
-        return view('produsen.incomingOrder',compact('order','product'));
+        $orders = DB::table('orders')
+            ->join('assets', 'orders.product_id', '=', 'assets.id')
+            ->select('orders.*', 'assets.nama_barang', 'assets.stock','assets.harga')
+            ->get();
+        return view('produsen.incomingOrder',compact('orders'));
     }
 
     /**
@@ -38,7 +41,7 @@ class IncomingOrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

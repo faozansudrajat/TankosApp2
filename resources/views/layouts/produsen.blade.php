@@ -58,7 +58,7 @@
 
          <!-- Nav Item - Transaction Produsen -->
         <li class="nav-item {{ Nav::isRoute('transaction') }}">
-            <a class="nav-link" href="{{ route('transaction') }}">
+            <a class="nav-link" href="{{ route('transaction.index') }}">
                 <i><img src="img/transaction.png" alt="" width="18"></i>
                 <span>{{ __('Transaction') }}</span></a>
         </li>

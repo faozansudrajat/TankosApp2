@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Assets;
 use Illuminate\Http\Request;
 use App\Order;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
@@ -15,6 +16,7 @@ class OrderController extends Controller
      */
     public function index()
     {
+    
         $product = Assets::all();
         return view('konsumen.order.order',compact('product'));
     }
