@@ -1,7 +1,7 @@
 <?php
 
+use App\Assets;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AssetController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +20,9 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+use App\Http\Controllers\AssetController;
 use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\KonfirmasiPembayaranController;
  
 // ----- [ALL USER] -----
 // Profile
@@ -28,13 +30,6 @@ Route::get('/profile', 'ProfileController@index')->name('profile');
 Route::put('/profile', 'ProfileController@update')->name('profile.update');
 // About
 Route::get('/about', 'AboutController@index')->name('about');
-
-Route::get('/transaction', 'TransactionController@index')->name('transaction');
-
-
-
-
-
 
 // ----- [ADDITIONAL] -----
 Route::middleware('auth')->group(function() {

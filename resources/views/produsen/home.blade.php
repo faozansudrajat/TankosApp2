@@ -3,7 +3,7 @@
 @section('main-content')
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800 font-weight-bold">{{ __('Home') }}</h1>
+    <h1 class="h3 mb-4 text-gray-800 font-weight-bold">{{ __('Dashboard') }}</h1>
 
     <div class="row justify-content-center">
         <div class="col-lg-3 mb-4">

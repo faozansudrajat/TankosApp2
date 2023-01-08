@@ -31,16 +31,21 @@
                                 <td>limbah Sawit</td>
                             @elseif($order->product_id == 3)
                                 <td>Abu Sawit</td>
-                            @endif
+                        @endif
                             <td>{{ $order->name}}</td>
                             <td>{{ $order->noTelp }}</td>
                             <td>{{ $order->quantity }}</td>
                             <td>{{ $order->jumlah }} </td>
-                            <td>{{ $order->address }}</td>
+                            <td>{{ $order->address }}</td>   
+
                             <td>
-                                <button type="submit" class="btn btn-success btn-info mb-2">Terima</button>
-                                <button type="submit" class="btn btn-danger btn-info mb-2">Tolak</button>
-                            </td>
+                                
+                                
+                                <input type="button" name="status1" class="btn btn-success btn-info mb-2" value="Terima" onclick="">
+                                <input type="button" name="status2" class="btn btn-danger btn-info mb-2" value="Tolak" onclick="">
+                                
+                                
+                            </td>                            
                         </tr>
                         @empty
                             <tr>

@@ -41,7 +41,12 @@ class IncomingOrderController extends Controller
      */
     public function store(Request $request)
     {
-        
+        if($request->input('status1')){
+            $order->status = 1;
+        }elseif($request->input('status2')){
+            $order->status = 2;
+        }
+        $order->save();
     }
 
     /**

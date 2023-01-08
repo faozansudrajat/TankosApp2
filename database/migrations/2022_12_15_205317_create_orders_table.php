@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('address');
             $table->bigInteger('quantity');
             $table->bigInteger('jumlah');
-            $table->binary('proofofpayment');
-            $table->bigInteger('status')->default(0);
+            $table->binary('proofofpayment')->nullable();
+            $table->char('status', 1)->default(0)->comment('0: diproses, 1: ditolak, 2: selesai');
             $table->timestamps();
         });
     }

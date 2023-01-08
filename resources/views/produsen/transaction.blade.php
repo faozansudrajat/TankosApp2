@@ -8,7 +8,7 @@
         <div class="col">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-gray-900">On Process</h6>
+                  <h6 class="m-0 font-weight-bold text-gray-900">My Transaction</h6>
                 </div>
 
         <div class="card-body">
@@ -50,7 +50,7 @@
                   <td>{{ $order->jumlah }} </td>
                   <td>{{ $order->address }}</td>
                   @if ($order->status== 0)
-                    <td>Diproses</td>  
+                    <td><span class="badge badge-warning">Diproses</span></td>  
                   @else
                       <td>Pesanan Selesai</td>
                   @endif

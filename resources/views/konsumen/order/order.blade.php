@@ -7,7 +7,6 @@
         #p {
             float: left;
         }
-
         #q {
             width: 33%;
             margin-left: 40%
@@ -43,12 +42,12 @@
                     @method('POST')
                     <div class="card-body">
                         <div class="form-group" id="p">
-                            <label class="font-weight-bold">Product</label>
+                            <label for="product_id" class="font-weight-bold">Product</label>
                             <br>
-                            <select name="product_id" class="form-control">
+                            <select name="product_id" id="product_id" class="form-control">
                                 <option value="0"> Pilih Produk </option>
                                 @foreach ($product as $pr)
-                                    <option value="{{ $pr->id }}">{{ $pr->nama_barang }} - Rp {{ $pr->harga }} - Stock = {{ $pr->stock}} </option>
+                                    <option value="{{ $pr->id }}" data-harga ="{{ $pr->harga }}" data-stock="{{ $pr->stock }}">{{ $pr->nama_barang }} - Rp {{ $pr->harga }} - Stock = {{ $pr->stock}} </option>
                                 @endforeach
                             </select>
                         </div>
@@ -56,7 +55,7 @@
                             <label class="font-weight-bold">Quantity</label>
                             <input type="number" name="quantity" class="form-control" placeholder="0" required="">
                         </div>
-
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalTotalHarga" id="btnLihatHarga">Lihat harga</button>
                         <br>
     
                         <div class="form-group">
@@ -76,35 +75,7 @@
                             <input type="file" name="proofofpayment" class="form-control" required="">
                         </div>
                         <br>
-                        <hr style="border-style: dashed solid; border-width: 3px 0px 0px;">
-                        <br>
-                        <div class="pl-lg-4">
-                            <div class="row">
-                                <div class="col text-center">
-                                    <h5 class="font-weight" >Total:</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pl-lg-4">
-                            <div class="row">
-                                <div class="col text-center">
-                                    <h4 class="font-weight-bold" >Rp</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pl-lg-4">
-                            <div class="row">
-                                <div class="col text-center">
-                                    <h5 class="font-weight">Transfer to:</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pl-lg-4">
-                            <div class="row">
-                                <div class="col text-center">
-                                    <h4 class="font-weight-bold" >BCA: 20937192</h4>
-                                </div>
-                            </div>
+                        
                         </div>
                         <div class="pl-lg-4">
                             <div class="row">
@@ -122,3 +93,59 @@
 
     </div>
 @endsection
+
+<!-- Modal -->
+<div class="modal fade" id="modalTotalHarga" tabindex="-1" role="dialog" aria-labelledby="modalTotalHargaLabel" aria-hidden="true" >
+    <div class="modal-dialog" role="document" >
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTotalHargaLabel">Total Harga</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <p>Total harga   :  <span id="totalHarga"></span></p>
+                    <p>Bank          : <span id="bank"></span></p>
+                    <p>Nomor rekening: <span id="nomorRekening"></span></p>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $('#btnLihatHarga').click(function(){
+            var product_id = $('#product_id').val();
+            var stock = $('#product_id').find(':selected').data('stock');
+            var harga = $('#product_id').find(':selected').data('harga'); 
+            var quantity = $('input[name="quantity"]').val();
+            if (product_id != 0) {
+                if ( quantity > stock) {
+                    $('#totalHarga').text('Anda memesan melebihi stock yang tersedia!!');
+                    $('#nomorRekening').text('Tidak Valid'); 
+                    $('#bank').text('Tidak Valid');
+                } else if (quantity == 0) {
+                    $('#totalHarga').text('Tolong inputkan quantity barang');
+                    $('#nomorRekening').text('Tidak Valid'); 
+                    $('#bank').text('Tidak Valid');
+                }else{
+                    var totalHarga = harga * quantity;
+                    $('#totalHarga').text('Rp' + totalHarga);
+                    $('#nomorRekening').text('20937192'); 
+                    $('#bank').text('BCA'); 
+                }
+            } else {
+                $('#totalHarga').text('Silahkan pilih produk');
+                $('#nomorRekening').text('Tidak Valid'); 
+                $('#bank').text('Tidak Valid');
+            }
+        });
+    });
+</script>
+

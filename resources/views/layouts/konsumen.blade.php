@@ -43,15 +43,15 @@
         <hr class="sidebar-divider my-0">
 
         <!-- Nav Item - Dashboard -->
-        <li class="nav-item {{ Nav::isRoute('home') }}">
+        <li class="nav-item {{ Nav::isRoute('home') }} ">
             <a class="nav-link" href="{{ route('home') }}">
                 <i><img src="img/dashboard.png" alt="" width="18"></i>
                 <span>{{ __('Dashboard') }}</span></a>
         </li>
 
         <!-- Nav Item - Order -->
-        <li class="nav-item {{ Nav::isRoute('order') }}">
-            <a class="nav-link" href="{{ route('order.index') }}"">
+        <li class="nav-item {{ Nav::isRoute('order') }} ">
+            <a class="nav-link" href="{{ route('order.index') }}">
                 <i><img src="img/order.png" alt="" width="18"></i>
                 <span>{{ __('Order') }}</span></a>
         </li>

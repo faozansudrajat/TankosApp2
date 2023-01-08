@@ -63,7 +63,7 @@ class OrderController extends Controller
         $product ->stock -= $request->input('quantity');
         $order->save();
         $product->save();
-        return redirect()->route('order.index')->with('message', 'Proses order berhasil');
+        return redirect()->route('order.index')->with('pesan', 'Proses order berhasil');
       
     }
 
