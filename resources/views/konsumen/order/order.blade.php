@@ -17,7 +17,7 @@
 
     @if($message = Session::get('pesan'))
         <div class="alert alert-primary">
-            <button class="close">
+            <button data-dismiss="alert" class="close">
                 <span>&times;</span>
             </button>
             <strong>{{ $message }}</strong>

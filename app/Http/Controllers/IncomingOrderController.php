@@ -41,12 +41,7 @@ class IncomingOrderController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->input('status1')){
-            $order->status = 1;
-        }elseif($request->input('status2')){
-            $order->status = 2;
-        }
-        $order->save();
+        
     }
 
     /**
@@ -80,7 +75,16 @@ class IncomingOrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $order = Order::findOrFail($id);
+    
+        if ($request->has('approve')) {
+            $order->status = 1;
+        } elseif ($request->has('reject')) {
+            $order->status = 2;
+        }
+        $order->save();
+    
+        return redirect()->route('incomingOrder.index');
     }
 
     /**

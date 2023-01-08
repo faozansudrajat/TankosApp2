@@ -7,23 +7,24 @@
 
     <div class="row justify-content-center">
 
-        <!-- DataTales Example -->
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th class="text-muted ">Jenis Barang</th>
-                            <th class="text-muted ">Nama Pembeli</th>
-                            <th class="text-muted ">No HP</th>
-                            <th class="text-muted ">Qty</th>
-                            <th class="text-muted ">Total Harga</th>
-                            <th class="text-muted ">Alamat</th>
-                            <th class="text-muted ">Option</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @forelse ($orders as $order)
+    <!-- DataTales Example -->
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="text-muted ">Jenis Barang</th>
+                        <th class="text-muted ">Nama Pembeli</th>
+                        <th class="text-muted ">No HP</th>
+                        <th class="text-muted ">Qty</th>
+                        <th class="text-muted ">Total Harga</th>
+                        <th class="text-muted ">Alamat</th>
+                        <th class="text-muted ">Option</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @forelse ($orders as $order)
+                        @if ($order->status !== 1 && $order->status !== 2)
                         <tr>
                             @if ($order->product_id == 1)
                                 <td>Tandan Kosong</td>
@@ -31,30 +32,33 @@
                                 <td>limbah Sawit</td>
                             @elseif($order->product_id == 3)
                                 <td>Abu Sawit</td>
-                        @endif
+                            @endif
                             <td>{{ $order->name}}</td>
                             <td>{{ $order->noTelp }}</td>
                             <td>{{ $order->quantity }}</td>
                             <td>{{ $order->jumlah }} </td>
-                            <td>{{ $order->address }}</td>   
-
+                            <td>{{ $order->address }}</td>
                             <td>
-                                
-                                
-                                <input type="button" name="status1" class="btn btn-success btn-info mb-2" value="Terima" onclick="">
-                                <input type="button" name="status2" class="btn btn-danger btn-info mb-2" value="Tolak" onclick="">
-                                
-                                
-                            </td>                            
+                                <form action="{{ route('incomingOrder.update', $order->id) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <button type="submit" name="approve" class="btn btn-success btn-info mb-2">Terima</button>
+                                    <button type="submit" name="reject" class="btn btn-danger btn-info mb-2">Tolak</button>
+                                </form>
+                            </td>
                         </tr>
-                        @empty
+                        @else
                             <tr>
-                                <td colspan="7" class="text-center">Belum ada data order</td>
+                                <td colspan="7" class="text-center">Belum ada data orderan masuk</td>
                             </tr>
-                        @endforelse
-                    </tbody>
-                </table>
-            </div>
+                        @endif
+                    @empty
+                        <tr>
+                            <td colspan="7" class="text-center">Belum ada data orderan masuk</td>
+                        </tr>
+                    @endforelse
+                </tbody>
+            </table>
         </div>
     </div>
 

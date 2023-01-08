@@ -1,7 +1,7 @@
 <?php
 
-use App\Assets;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AssetController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +20,7 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-use App\Http\Controllers\AssetController;
 use App\Http\Controllers\TransaksiController;
-use App\Http\Controllers\KonfirmasiPembayaranController;
  
 // ----- [ALL USER] -----
 // Profile
@@ -30,12 +28,12 @@ Route::get('/profile', 'ProfileController@index')->name('profile');
 Route::put('/profile', 'ProfileController@update')->name('profile.update');
 // About
 Route::get('/about', 'AboutController@index')->name('about');
-
 // ----- [ADDITIONAL] -----
 Route::middleware('auth')->group(function() {
     Route::resource('basic', BasicController::class);
     Route::resource('asset', AssetController::class);
     Route::resource('order', OrderController::class);
-    Route::resource('incomingOrder', IncomingOrderController::class);
+    //Route::resource('incomingOrder', IncomingOrderController::class);
+    Route::resource('incomingOrder', IncomingOrderController::class)->only(['index', 'update']);
     Route::resource('transaction', TransactionController::class);
 });
