@@ -54,7 +54,7 @@ Install Composer
 copy .env.example file to .env
 
 ```bash
-  cp .env.example .env
+  copy .env.example .env
 ```
 
 Open and Run XAMPP For Apache and MySql
