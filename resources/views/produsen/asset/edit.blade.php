@@ -3,14 +3,14 @@
 @section('main-content')
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800 font-weight-bold">{{ __('Assets') }}</h1>
+    <h1 class="h3 mb-4 text-gray-800 font-weight-bold">{{ __('Asset') }}</h1>
 
     <section class="section">
         <div class="row">
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="font-weight-bold" class="text-center"> Halaman Edit Data Product</h5>
+                        <h5 class="font-weight-bold" class="text-center"> Halaman Edit Asset</h5>
                     </div>
                     <div class="card-body">
                         <form action="{{route('asset.update',$pr->id )  }}" method="POST">

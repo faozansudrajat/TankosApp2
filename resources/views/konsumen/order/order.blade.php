@@ -9,7 +9,7 @@
         }
         #q {
             width: 33%;
-            margin-left: 40%
+            margin-left: 50%
         }
     </style>
 
@@ -64,11 +64,11 @@
                         </div>
                         <div class="form-group">
                             <label class="font-weight-bold">Phone Number</label>
-                            <input type="text" name="phonenumber" class="form-control" placeholder="081234567890" required="">
+                            <input type="text" name="phonenumber" class="form-control" placeholder="08xxxxxxxxxx" required="">
                         </div>
                         <div class="form-group">
                             <label class="font-weight-bold">Address</label>
-                            <input type="text" name="address" class="form-control" placeholder="Street 6" required="">
+                            <input type="text" name="address" class="form-control" placeholder="Street X" required="">
                         </div>
                         <div class="form-group">
                             <label class="font-weight-bold">Proof Of Payment</label>

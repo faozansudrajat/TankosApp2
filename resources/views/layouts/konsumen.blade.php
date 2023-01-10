@@ -50,14 +50,14 @@
         </li>
 
         <!-- Nav Item - Order -->
-        <li class="nav-item {{ Nav::isRoute('order') }} ">
+        <li class="nav-item {{ request()->routeIs('order.index') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('order.index') }}">
                 <i><img src="img/order.png" alt="" width="18"></i>
                 <span>{{ __('Order') }}</span></a>
         </li>
 
         <!-- Nav Item - Transaction -->
-        <li class="nav-item {{ Nav::isRoute('transaction') }}">
+        <li class="nav-item {{ request()->routeIs('transaction.index') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('transaction.index') }}">
                 <i><img src="img/transaction.png" alt="" width="18"></i>
                 <span>{{ __('Transaction') }}</span></a>

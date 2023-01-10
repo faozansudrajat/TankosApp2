@@ -16,7 +16,7 @@ class AssetController extends Controller
     public function index()
     {
         $product = Assets::all();
-        return view('produsen.assets.asset', ['product' => $product]);
+        return view('produsen.asset.asset', ['product' => $product]);
     }
 
     /**
@@ -66,7 +66,7 @@ class AssetController extends Controller
     {
         //
         $pr = Assets::find($id);
-        return view('produsen.assets.edit', compact('pr'));
+        return view('produsen.asset.edit', compact('pr'));
     }
 
     /**

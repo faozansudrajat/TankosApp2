@@ -50,21 +50,21 @@
         </li>
 
         <!-- Nav Item - Incoming Order -->
-        <li class="nav-item {{ Nav::isRoute('incomingOrder') }}">
+        <li class="nav-item {{ request()->routeIs('incomingOrder.index') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('incomingOrder.index') }}">
                 <i><img src="img/incoming_order.png" alt="" width="18"></i>
                 <span>{{ __('Incoming Order') }}</span></a>
         </li>
 
          <!-- Nav Item - Transaction Produsen -->
-        <li class="nav-item {{ Nav::isRoute('transaction') }}">
+        <li class="nav-item {{ request()->routeIs('transaction.index') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('transaction.index') }}">
                 <i><img src="img/transaction.png" alt="" width="18"></i>
                 <span>{{ __('Transaction') }}</span></a>
         </li>
         
         <!-- Nav Item - Asset -->
-        <li class="nav-item {{ Nav::isRoute('asset') }}">
+        <li class="nav-item {{ request()->routeIs('asset.index') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('asset.index') }}">
                 <i><img src="img/asset.png" alt="" width="18"></i>
                 <span>{{ __('Asset') }}</span></a>
