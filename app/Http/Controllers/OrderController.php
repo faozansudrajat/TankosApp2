@@ -52,6 +52,10 @@ class OrderController extends Controller
             
         ]);
         $product = Assets::where('id', $request->product_id)->first();
+        if($product->stock <= 0){
+            return redirect()->route('order.index')->with('pesan', 'Proses order gagal, stock product kosong');
+        }
+            
         $order = new Order();
         $order -> product_id = $request->input('product_id');
         $order -> quantity = $request->input('quantity');
