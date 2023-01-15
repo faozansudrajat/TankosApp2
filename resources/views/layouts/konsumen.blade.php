@@ -42,11 +42,11 @@
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
 
-        <!-- Nav Item - Dashboard -->
+        <!-- Nav Item - Home -->
         <li class="nav-item {{ Nav::isRoute('home') }} ">
             <a class="nav-link" href="{{ route('home') }}">
                 <i><img src="img/dashboard.png" alt="" width="18"></i>
-                <span>{{ __('Dashboard') }}</span></a>
+                <span>{{ __('Home') }}</span></a>
         </li>
 
         <!-- Nav Item - Order -->

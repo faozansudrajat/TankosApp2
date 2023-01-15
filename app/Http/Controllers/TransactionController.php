@@ -17,9 +17,6 @@ class TransactionController extends Controller
     public function index()
     {
         $users = User::count();
-
-
-
         $usertype = Auth::user()->usertype;
         $orders = DB::table('orders')
             ->join('assets', 'orders.product_id', '=', 'assets.id')

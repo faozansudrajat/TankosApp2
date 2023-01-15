@@ -57,7 +57,7 @@
                 </tr>
                 @empty
                   <tr>
-                    <td colspan="7" class="text-center">Belum ada data orderan masuk</td>
+                    <td colspan="7" class="text-center font-weight-bold">Belum ada data orderan masuk</td>
                   </tr>
                 @endforelse
               </tbody>

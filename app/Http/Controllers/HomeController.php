@@ -27,19 +27,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $users = User::count();
 
-        $widget = [
-            'users' => $users,
-            //...
-        ];
 
         $usertype = Auth::user()->usertype;
         
         $product = Assets::all();
 
         if($usertype =='0'){
-            return view('konsumen.home', compact('widget'), ['product' => $product]);
+            return view('konsumen.home', ['product' => $product]);
         }else{
             return view('produsen.home', ['product' => $product]);
         }

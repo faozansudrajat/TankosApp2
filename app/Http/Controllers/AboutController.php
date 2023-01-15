@@ -15,17 +15,11 @@ class AboutController extends Controller
      */
     public function index()
     {
-        $users = User::count();
-
-        $widget = [
-            'users' => $users,
-            //...
-        ];
 
         $usertype = Auth::user()->usertype;
 
         if($usertype =='0'){
-            return view('konsumen.about', compact('widget'));
+            return view('konsumen.about');
         }else{
             return view('produsen.about');
         }
